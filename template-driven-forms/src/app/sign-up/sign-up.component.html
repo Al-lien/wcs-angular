@@ -1,0 +1,83 @@
+<main class="main-container">
+  <form #myForm="ngForm" (ngSubmit)="onSubmit(myForm)">
+    <fieldset>
+      <input
+        type="email"
+        id="email"
+        name="email"
+        placeholder="email"
+        [(ngModel)]="model.email"
+        #email="ngModel"
+        email
+        required
+      />
+    </fieldset>
+
+    <i *ngIf="myForm.submitted && email.errors?.['required']"
+      >L'email est requis</i
+    >
+    <i *ngIf="myForm.submitted && email.errors?.['email']"
+      >L'email est invalide</i
+    >
+
+    <fieldset>
+      <input
+        type="text"
+        id="firstname"
+        name="firstname"
+        placeholder="firstname"
+        [(ngModel)]="model.firstname"
+        #firstname="ngModel"
+        required
+        minlength="3"
+        maxlength="15"
+      />
+    </fieldset>
+
+    <i *ngIf="myForm.submitted && firstname.errors?.['required']"
+      >Le prénom est requis</i
+    >
+    <i *ngIf="myForm.submitted && firstname.errors?.['minlength']">
+      Le prénom doit comporter au moins 3 caractères.</i
+    >
+    <i *ngIf="myForm.submitted && firstname.errors?.['maxlength']"
+      >Le prénom ne doit pas dépasser 15 caractères</i
+    >
+
+    <fieldset>
+      <input
+        type="text"
+        id="lastname"
+        name="lastname"
+        placeholder="lastname"
+        [(ngModel)]="model.lastname"
+        #lastname="ngModel"
+        required
+        minlength="3"
+        maxlength="15"
+      />
+    </fieldset>
+
+    <i *ngIf="myForm.submitted && lastname.errors?.['required']"
+      >Le nom est requis</i
+    >
+    <i *ngIf="myForm.submitted && lastname.errors?.['minlength']">
+      Le nom doit comporter au moins 3 caractères.</i
+    >
+    <i *ngIf="myForm.submitted && lastname.errors?.['maxlength']"
+      >Le nom ne doit pas dépasser 15 caractères</i
+    >
+    <fieldset>
+      <input
+        type="password"
+        id="password"
+        name="password"
+        placeholder="password"
+        [(ngModel)]="model.password"
+        #password="ngModel"
+        required
+      />
+    </fieldset>
+    <button type="submit">Signup !</button>
+  </form>
+</main>
