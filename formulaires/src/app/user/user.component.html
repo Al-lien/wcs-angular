@@ -1,0 +1,15 @@
+<main class="container">
+  <div>
+    <input type="text" [formControl]="username" placeholder="username" />
+    <input type="text" [formControl]="email" placeholder="email" />
+    <input type="password" [formControl]="password" placeholder="password" />
+    <input type="text" [formControl]="street" placeholder="street" />
+    <input type="number" [formControl]="postcode" placeholder="postcode" />
+    <input type="text" [formControl]="city" placeholder="city" />
+    <button type="button" (click)="onSubmitForm()">Inscription</button>
+  </div>
+
+  <div *ngIf="newUser">
+    <p>{{ newUser.username }}</p>
+  </div>
+</main>
