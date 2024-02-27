@@ -13,10 +13,8 @@ export class CocktailListComponent implements OnInit {
   constructor(private cocktailService: CocktailServiceService) {}
 
   ngOnInit(): void {
-    this.getCocktails();
-  }
-
-  getCocktails(): void {
-    this.cocktails = this.cocktailService.getCocktails();
+    this.cocktailService.getCocktails().subscribe((cocktailsFromJsonFile) => {
+      this.cocktails = cocktailsFromJsonFile;
+    });
   }
 }
