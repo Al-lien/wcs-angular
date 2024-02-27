@@ -1,6 +1,16 @@
 import { Component } from '@angular/core';
 import { FormControl } from '@angular/forms';
-import { User } from '../user';
+
+interface User {
+  username: string | null;
+  email: string | null;
+  password: string | null;
+  address: {
+    street: string | null;
+    postcode: number | string | null;
+    city: string | null;
+  };
+}
 
 @Component({
   selector: 'app-user',
@@ -24,11 +34,9 @@ export class UserComponent {
       password: this.password.value,
       address: {
         street: this.street.value,
-        postalCode: this.postcode.value,
+        postcode: this.postcode.value,
         city: this.city.value,
       },
     };
-
-    console.log(this.newUser);
   }
 }
