@@ -1,0 +1,36 @@
+<main class="container">
+  <form [formGroup]="userForm" (ngSubmit)="onSubmit()">
+    <fieldset>
+      <h3>Username :</h3>
+      <input type="text" formControlName="username" placeholder="username" />
+    </fieldset>
+    <fieldset formGroupName="credentials">
+      <h3>Credentials :</h3>
+      <input type="email" formControlName="email" placeholder="email" />
+      <input
+        type="password"
+        formControlName="password"
+        placeholder="password"
+      />
+    </fieldset>
+    <fieldset formGroupName="address">
+      <h3>Address :</h3>
+      <input type="text" formControlName="street" placeholder="street" />
+      <input type="text" formControlName="city" placeholder="city" />
+      <input type="number" formControlName="zipCode" placeholder="zipCode" />
+    </fieldset>
+    <button type="submit" [disabled]="!userForm.valid">Submit</button>
+  </form>
+
+  <div *ngIf="submitted">
+    <h3>Username :</h3>
+    <p>{{ userForm.value.username }}</p>
+    <h3>Credentials :</h3>
+    <p>{{ userForm.value.credentials?.email }}</p>
+    <p>{{ userForm.value.credentials?.password }}</p>
+    <h3>Address :</h3>
+    <p>{{ userForm.value.address?.street }}</p>
+    <p>{{ userForm.value.address?.city }}</p>
+    <p>{{ userForm.value.address?.zipCode }}</p>
+  </div>
+</main>

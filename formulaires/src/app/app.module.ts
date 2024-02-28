@@ -6,12 +6,12 @@ import {
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { CocktailListComponent } from './cocktail-list/cocktail-list.component';
-import { HttpClientModule } from '@angular/common/http';
+import { UserComponent } from './user/user.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
-  declarations: [AppComponent, CocktailListComponent],
-  imports: [BrowserModule, AppRoutingModule, HttpClientModule],
+  declarations: [AppComponent, UserComponent],
+  imports: [BrowserModule, AppRoutingModule, ReactiveFormsModule],
   providers: [provideClientHydration()],
   bootstrap: [AppComponent],
 })
