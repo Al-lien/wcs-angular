@@ -1,0 +1,15 @@
+<main class="container">
+  <div class="account-home-container">
+    <h3>Random user account</h3>
+    <app-user-card
+      *ngIf="user !== undefined"
+      [username]="user.username"
+      [firstname]="user.firstname"
+      [lastname]="user.lastname"
+      [email]="user.email"
+      [id]="user.id"
+      [showButton]="showButton"
+    ></app-user-card>
+    <a [routerLink]="['/admin/home']"> 👉 Click here to go to the admin page</a>
+  </div>
+</main>

@@ -1,0 +1,13 @@
+<main class="container">
+  <div class="card-container">
+    <app-user-card
+      *ngFor="let user of users"
+      [username]="user.username"
+      [firstname]="user.firstname"
+      [lastname]="user.lastname"
+      [email]="user.email"
+      [id]="user.id"
+    >
+    </app-user-card>
+  </div>
+</main>

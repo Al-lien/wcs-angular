@@ -1,0 +1,14 @@
+<main class="container">
+  <div class="single-user-container">
+    <a [routerLink]="['/admin/home']">Click to go back 👈</a>
+    <app-user-card
+      *ngIf="user !== undefined"
+      [username]="user.username"
+      [firstname]="user.firstname"
+      [lastname]="user.lastname"
+      [email]="user.email"
+      [id]="user.id"
+      [showButton]="showButton"
+    ></app-user-card>
+  </div>
+</main>

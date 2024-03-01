@@ -1,0 +1,39 @@
+.card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  width: 200px;
+  height: 350px;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  box-shadow: 0 12px 32px 4px rgba(black, 0.2);
+  transition: 0.2s;
+
+  &:hover {
+    cursor: pointer;
+    transform: scale(1.05);
+
+    > svg {
+      fill: red;
+    }
+  }
+
+  h1 {
+    font-size: 1.75rem;
+  }
+
+  h2 {
+    font-size: calc(1.75rem / 1.618);
+    margin-bottom: auto;
+  }
+
+  p {
+    font-size: calc((1.75rem / 1.618) / 1.618);
+  }
+
+  svg {
+    margin-block: auto;
+  }
+}
