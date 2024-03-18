@@ -1,0 +1,56 @@
+<main class="container">
+  <form (ngSubmit)="onSubmit()" [formGroup]="movieForm" #myForm="ngForm">
+    <div formGroupName="name">
+      <fieldset>
+        <label for="title">Title : </label>
+        <input name="title" type="text" formControlName="title" />
+      </fieldset>
+      <fieldset>
+        <label for="id">id : </label>
+        <input name="id" type="text" formControlName="id" />
+      </fieldset>
+
+      <div *ngIf="name && name.errors && (name.dirty || myForm.submitted)">
+        <p *ngIf="name.hasError('isRequired')">
+          Enter at least a title or an id.
+        </p>
+      </div>
+    </div>
+
+    <fieldset>
+      <label for="type">Type : </label>
+      <select name="type" formControlName="type">
+        <option value="" disabled>Choose a type</option>
+        <option [value]="movieType" *ngFor="let movieType of movieTypes">
+          {{ movieType }}
+        </option>
+      </select>
+    </fieldset>
+
+    <fieldset>
+      <label for="year">Year : </label>
+      <input name="year" type="number" formControlName="year" />
+
+      <div *ngIf="year && year.errors && (year.dirty || myForm.submitted)">
+        <p class="error-message" *ngIf="year.errors['min']">
+          {{ year.errors["min"].message }}
+        </p>
+        <p class="error-message" *ngIf="year.errors['max']">
+          {{ year.errors["max"].message }}
+        </p>
+      </div>
+    </fieldset>
+
+    <fieldset>
+      <label for="summary">Summary : </label>
+      <select name="summary" formControlName="summary">
+        <option value="" selected disabled>Choose summary's length</option>
+        <option [value]="summaryType" *ngFor="let summaryType of summaryTypes">
+          {{ summaryType }}
+        </option>
+      </select>
+    </fieldset>
+
+    <button type="submit">Envoyer</button>
+  </form>
+</main>

@@ -1,0 +1,51 @@
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 100vh;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 1rem;
+  width: 350px;
+  border: 2px solid grey;
+  border-radius: 20px;
+
+  fieldset,
+  input,
+  button,
+  div {
+    width: 100%;
+  }
+
+  fieldset {
+    border: none;
+  }
+
+  input,
+  button {
+    padding: 0.5em 1em;
+    margin-block: 1em;
+    border: 1px solid lightgray;
+    border-radius: 20px;
+  }
+
+  button {
+    margin: 0;
+  }
+
+  span,
+  p {
+    color: lightcoral;
+  }
+
+  hr {
+    margin-block: 1rem;
+  }
+}

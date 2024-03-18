@@ -1,0 +1,66 @@
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 100vh;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 1rem;
+  width: 350px;
+  border: 2px solid grey;
+  border-radius: 20px;
+
+  fieldset,
+  input,
+  button,
+  div {
+    width: 100%;
+  }
+
+  fieldset {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    border: none;
+  }
+
+  input,
+  button,
+  select {
+    padding: 0.5em 1em;
+    margin-block: 0.5em;
+    background-color: transparent;
+    border: 1px solid lightgray;
+    border-radius: 20px;
+  }
+
+  label {
+    padding-left: 1em;
+  }
+
+  button {
+    cursor: pointer;
+    margin-top: 1em;
+    transition: all 0.2s;
+
+    &:hover {
+      transform: scale(1.05);
+    }
+  }
+
+  span,
+  p {
+    color: lightcoral;
+  }
+
+  hr {
+    margin-block: 1rem;
+  }
+}
