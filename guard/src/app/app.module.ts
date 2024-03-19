@@ -6,11 +6,10 @@ import {
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { HomeComponent } from './home/home.component';
-import { DashboardComponent } from './dashboard/dashboard.component';
-import { AdminComponent } from './admin/admin.component';
-import { HeaderComponent } from './header/header.component';
-import { ROUTES, RouterModule } from '@angular/router';
+import { HomeComponent } from './pages/home/home.component';
+import { DashboardComponent } from './pages/dashboard/dashboard.component';
+import { AdminComponent } from './pages/admin/admin.component';
+import { HeaderComponent } from './components/header/header.component';
 
 @NgModule({
   declarations: [

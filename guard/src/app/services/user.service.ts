@@ -7,11 +7,14 @@ export class UserService {
   private role: 'ANONYMOUS' | 'USER' | 'ADMIN' = 'USER';
   private isAuthenticated: boolean = true;
 
-  login(): boolean {
+  isLogin(): boolean {
+    if (this.role === 'ANONYMOUS') {
+      return (this.isAuthenticated = false);
+    }
     return this.isAuthenticated;
   }
 
-  setRole(): string {
+  getRole(): 'ANONYMOUS' | 'USER' | 'ADMIN' {
     return this.role;
   }
 

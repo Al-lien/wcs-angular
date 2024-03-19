@@ -3,17 +3,13 @@ import { CanActivateFn, Router } from '@angular/router';
 import { UserService } from '../services/user.service';
 
 export const isConnectedGuard: CanActivateFn = (route, state) => {
-  const log = inject(UserService);
+  const user = inject(UserService);
   const router = inject(Router);
 
-  if (log.login() === false) {
-    router.navigateByUrl('/home');
-    return false;
+  if (user.isLogin() || user.getRole() === 'ADMIN') {
+    return true;
   }
 
-  if (log.login()) {
-    return (log.setRole() === 'USER' || log.setRole() === 'ADMIN') && true;
-  }
-
+  router.navigateByUrl('/home');
   return false;
 };
