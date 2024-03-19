@@ -1,0 +1,36 @@
+<main class="container">
+  <form [formGroup]="userForm" (ngSubmit)="setUser()">
+    <label for="username"
+      >Username :
+      <input name="username" type="text" formControlName="username" />
+    </label>
+    <fieldset formGroupName="credentials">
+      <label for="email"
+        >Email :
+        <input name="email" type="email" formControlName="email" />
+      </label>
+      <p *ngIf="email && email.errors && email.dirty">
+        {{ email.errors["email"].message }}
+      </p>
+      <label for="password"
+        >Password :
+        <input name="password" type="password" formControlName="password" />
+      </label>
+    </fieldset>
+    <fieldset formGroupName="address">
+      <label for="street"
+        >Street :
+        <input name="street" type="text" formControlName="street" />
+      </label>
+      <label for="postcode"
+        >Postcode :
+        <input name="postcode" type="number" formControlName="postcode" />
+      </label>
+      <label for="city"
+        >City :
+        <input name="city" type="text" formControlName="city" />
+      </label>
+    </fieldset>
+    <button type="submit">Submit</button>
+  </form>
+</main>
